@@ -1,5 +1,7 @@
 'use strict';
 
+alert('Must Checkout Rules Before Starting Game');
+
 //code for rules window
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
