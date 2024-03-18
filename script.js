@@ -76,23 +76,25 @@ const switchPlayer = () => {
 
 //Rolling dice functionality
 btnRoll.addEventListener('click', function () {
-  //generate a random dice roll
-  const dice = Math.trunc(Math.random() * 6) + 1;
+  if (playing) {
+    //generate a random dice roll
+    const dice = Math.trunc(Math.random() * 6) + 1;
 
-  //Display dice
-  diceEl.src = `/assets/dice-${dice}.png`;
+    //Display dice
+    diceEl.src = `/assets/dice-${dice}.png`;
 
-  //remove dice hidden class
-  diceEl.classList.remove('hidden');
+    //remove dice hidden class
+    diceEl.classList.remove('hidden');
 
-  //check for result if 1 switch to next player
-  if (dice === 1) {
-    switchPlayer();
-  } else {
-    //Add dice to current score
-    currentScore += dice;
-    document.getElementById(`current--${activePlayer}`).textContent =
-      currentScore;
+    //check for result if 1 switch to next player
+    if (dice === 1) {
+      switchPlayer();
+    } else {
+      //Add dice to current score
+      currentScore += dice;
+      document.getElementById(`current--${activePlayer}`).textContent =
+        currentScore;
+    }
   }
 });
 
