@@ -176,6 +176,10 @@ main {
   color: #c7365f;
 }
 
+.hidden {
+  display: none;
+}
+
 /* for rules */
 
 .hidden {
